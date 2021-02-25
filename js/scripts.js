@@ -10,21 +10,24 @@ function Pizza(size, toppings) {
   this.toppings = toppings;
 }
 
-Pizza.prototype.cost = function() {
+Pizza.prototype.pizzaCost = function() {
+	price = 0
 	sizePrice = {"S":10,"M":13.5,"L":16,"XL":18}
+  toppings = this.toppings
 	for (let key in sizePrice) {
-		if (this.size === key) {
-			return sizePrice[key]
+		if ((this.size === key) && (toppings.length > 2)) {
+    toppings = (toppings.length - 2)*2
+		price += sizePrice[key] + toppings
+		return price
+    }
   }
- }
 }
 
 Pizza.prototype.receipt = function() {
- return "1 " + this.size + " pizza with " + this.toppings
+  return "1 " + this.size + " pizza with " + this.toppings
 }
 
-let testPizza = new Pizza("S", ["mushroom", "cheese"])
+let testPizza = new Pizza("S", ["mushroom", "cheese", "tomato", "banana"])
 
-console.log(testPizza.cost())
-
-//console.log(testPizza.receipt())
+console.log(testPizza.pizzaCost())
+//console.log(testPizza.toppings.length)
