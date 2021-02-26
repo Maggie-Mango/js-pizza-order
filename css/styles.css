@@ -14,6 +14,10 @@ img {
   margin: 0 auto;
 }
 
+.dropdown {
+  position: center;
+}
+
 h1 {
     color:yellow;
     border-top: 4px solid yellow;
