@@ -5,6 +5,11 @@
 p {
   color: lightslategray;
 }
+
+.receipt {
+  display: none;
+}
+
 img {
   max-width: 100%;
   max-height: 100%;
