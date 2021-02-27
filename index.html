@@ -19,7 +19,7 @@
 
 <div class="container">
   <p class="text-center font-weight bold">Please wear a PPE mask upon arrival with your order name prepared.<br>
-  Ca$h or Ca$hApp onlyWe appreciate tips!</p>
+  Ca$h or Ca$hApp only. We appreciate tips!</p>
 
   <div id="order">
     <label for="name">Order Name</label>
@@ -28,6 +28,7 @@
 
   </div>
 
+<div class="pizza-size">
 <div class="page-header font-weight-light">
   <hr/>
   <h2>Choose Pizza Size</h2>
@@ -44,6 +45,7 @@
       </div>
     </div>
   </div>
+</div>
 
 <div class="toppings">
 <div class="page-header font-weight-light">
@@ -51,8 +53,6 @@
   <h2>Choose Toppings</h1>
   <p class="text-center font-weight-light">First topping free! | $2 per additional topping</p>
 </div>
-
-
 <div class="row">
   <div class="col-md-3">
       <div class="custom-control custom-checkbox image-checkbox">
@@ -132,18 +132,28 @@
 <div class="receipt">
   <hr/>
   <h2>Thanks for your order!</h2>
-    <p class="text-center font-weight-light">Something something</p>
+  <p class="text-center font-weight-light">
+    <span id="receipt">Total Cost: <span id="cost"></span>
+    </span>
+    <span id="address">Delivery address: </span>
+  </p>
+
+    <p class="text-center font-weight-light">
+      <span id="delivery">Your order will be ready in 20 minutes. Have your order name ready. Tips appreciated!</span>
+    </p>
 </div>
 
 
 <div class="page-header font-weight-light">
   <hr/>
+  <div class="button-hide">
   <h2>Order</h2>
     <div class="wrapper">
       <button class="btn btn-primary" value="button-one" type="submit">Pick-up</button>
       <button class="btn btn-primary" value="button-two" type="submit">Delivery</button>
       <button class="btn btn-primary" value="button-three" type="submit">Anotha One</button>
   </div>
+</div>
 </div>
 
 </form>

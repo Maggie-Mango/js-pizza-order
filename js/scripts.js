@@ -14,11 +14,11 @@ Pizza.prototype.pizzaCost = function() {
 	for (let key in sizePrice) {
 		if ((this.size === key) && (pizzaToppings.length === 1)) {
       price = sizePrice[key];
-      alert(price);
+      return price;
     } else if ((this.size === key) && (pizzaToppings.length > 1)) {
       price = sizePrice[key];
-      alert(price + ((pizzaToppings.length -1)*2))
-     }
+      return price + ((pizzaToppings.length -1)*2)
+      }
     }
   }  
 
@@ -50,9 +50,17 @@ $(document).ready(function() {
     let customer = new Customer(inputtedName);
     let newPizza = new Pizza(pizzaSize);
     //alert(pizzaToppings.length)
-    newPizza.pizzaCost()
-    $("form#new-order").submit();
+    $("#cost").text("$"+newPizza.pizzaCost()+" (Ca$happ: $maggsauce)");
+    $(".pizza-size").hide();
+    $(".toppings").hide();
+    $(".receipt").show();
+    $("#order").hide();
+    $("#address").hide();
+    $(".button-hide").hide();
   }
+
+
+
   //collect customer address then show receipt
   if ($(this).attr("value") == "button-two") {
     const inputtedName = $("input#name").val();
