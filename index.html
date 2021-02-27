@@ -129,11 +129,47 @@
 </div>
 </div>
 
+<div class="address">
+  <div class="form-group">
+    <input type="street" 
+      class="form-control" 
+      id="autocomplete" 
+      placeholder="Street">
+    
+    <input type="city" 
+      class="form-control" 
+      id="inputCity" 
+      placeholder="City">
+
+    <input type="state" 
+      class="form-control" 
+      id="inputState" 
+      placeholder="State">
+    
+    <input type="zip" 
+      class="form-control" 
+      id="inputZip" 
+      placeholder="Zip">
+
+    <input type="county" 
+      class="form-control" 
+      id="inputCounty" 
+      placeholder="County">
+    
+    <input type="country" 
+      class="form-control" 
+      id="inputCountry" 
+      placeholder="Country">
+
+      <button class="btn btn-primary float-right" value="button-address" type="submit">Submit</button>
+  </div>
+</div>
+
 <div class="receipt">
   <hr/>
   <h2>Thanks for your order!</h2>
   <p class="text-center font-weight-light">
-    <span id="receipt">Total Cost: <span id="cost"></span>
+    <span id="receipt">Total Cost: <span id="cost"><br></span>
     </span>
     <span id="address">Delivery address: </span>
   </p>

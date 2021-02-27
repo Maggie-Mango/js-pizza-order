@@ -34,22 +34,19 @@ Pizza.prototype.receipt = function() {
 
 pizzaToppings = []
 //UI logic
+
+//Pick-up button
 $(document).ready(function() {
   $("form#new-order button").click(function(event) {
     event.preventDefault();
-
-    //show basic receipt
     if ($(this).attr("value") == "button-one") {
     const inputtedName = $("input#name").val();
-    //console.log(inputtedName)
   $("input:checkbox[name=pizzaTopping]:checked").each(function() {
       pizzaToppings.push($(this).val());
     });
     const pizzaSize = $(".form-select option:selected").text();
-    //alert(pizzaSize)
     let customer = new Customer(inputtedName);
     let newPizza = new Pizza(pizzaSize);
-    //alert(pizzaToppings.length)
     $("#cost").text("$"+newPizza.pizzaCost()+" (Ca$happ: $maggsauce)");
     $(".pizza-size").hide();
     $(".toppings").hide();
@@ -60,22 +57,27 @@ $(document).ready(function() {
   }
 
 
-
-  //collect customer address then show receipt
+  //Delivery button
   if ($(this).attr("value") == "button-two") {
-    const inputtedName = $("input#name").val();
-    //console.log(inputtedName)
-  $("input:checkbox[name=pizzaTopping]:checked").each(function() {
-      pizzaToppings.push($(this).val());
-    });
-    const pizzaSize = $(".form-select option:selected").text();
-    //alert(pizzaSize)
-    let customer = new Customer(inputtedName);
-    let newPizza = new Pizza(pizzaSize);
-    //alert(pizzaToppings.length)
-    newPizza.pizzaCost()
-    $("form#new-order").submit();
-  }
+  const inputtedName = $("input#name").val();
+$("input:checkbox[name=pizzaTopping]:checked").each(function() {
+    pizzaToppings.push($(this).val());
+  });
+  const pizzaSize = $(".form-select option:selected").text();
+  let customer = new Customer(inputtedName);
+  let newPizza = new Pizza(pizzaSize);
+  $(".address").show();
+  $("#order").hide();
+  $(".toppings").hide();
+  $(".pizza-size").hide();
+  $(".button-hide").hide();
+}
+
+  if ($(this).attr("value") == "button-address") {
+  $(".address").hide();
+  $(".receipt").show();
+  $("#cost").text("$"+newPizza.pizzaCost()+" (Ca$happ: $maggsauce)");
+}
 
 
   //save pizza, show 1 in cart, hide customer name input, collect new pizza information
