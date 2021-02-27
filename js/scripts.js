@@ -35,8 +35,9 @@ Pizza.prototype.receipt = function() {
 pizzaToppings = []
 //UI logic
 $(document).ready(function() {
-  $("form#new-order").submit(function(event) {
+  $("form#new-order button").click(function(event) {
     event.preventDefault();
+    if ($(this).attr("value") == "button-one") {
     const inputtedName = $("input#name").val();
     //console.log(inputtedName)
   $("input:checkbox[name=pizzaTopping]:checked").each(function() {
@@ -48,5 +49,7 @@ $(document).ready(function() {
     let newPizza = new Pizza(pizzaSize);
     //alert(pizzaToppings.length)
     newPizza.pizzaCost()
+    $("form#new-order").submit();
+  }
   });
 });
