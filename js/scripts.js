@@ -37,6 +37,8 @@ pizzaToppings = []
 $(document).ready(function() {
   $("form#new-order button").click(function(event) {
     event.preventDefault();
+
+    //show basic receipt
     if ($(this).attr("value") == "button-one") {
     const inputtedName = $("input#name").val();
     //console.log(inputtedName)
@@ -51,5 +53,38 @@ $(document).ready(function() {
     newPizza.pizzaCost()
     $("form#new-order").submit();
   }
+  //collect customer address then show receipt
+  if ($(this).attr("value") == "button-two") {
+    const inputtedName = $("input#name").val();
+    //console.log(inputtedName)
+  $("input:checkbox[name=pizzaTopping]:checked").each(function() {
+      pizzaToppings.push($(this).val());
+    });
+    const pizzaSize = $(".form-select option:selected").text();
+    //alert(pizzaSize)
+    let customer = new Customer(inputtedName);
+    let newPizza = new Pizza(pizzaSize);
+    //alert(pizzaToppings.length)
+    newPizza.pizzaCost()
+    $("form#new-order").submit();
+  }
+
+
+  //save pizza, show 1 in cart, hide customer name input, collect new pizza information
+  if ($(this).attr("value") == "button-three") {
+    const inputtedName = $("input#name").val();
+    //console.log(inputtedName)
+  $("input:checkbox[name=pizzaTopping]:checked").each(function() {
+      pizzaToppings.push($(this).val());
+    });
+    const pizzaSize = $(".form-select option:selected").text();
+    //alert(pizzaSize)
+    let customer = new Customer(inputtedName);
+    let newPizza = new Pizza(pizzaSize);
+    //alert(pizzaToppings.length)
+    newPizza.pizzaCost()
+    $("form#new-order").submit();
+  }
+
   });
 });
