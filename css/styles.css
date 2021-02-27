@@ -14,6 +14,11 @@ img {
   margin: 0 auto;
 }
 
+#order {
+  text-align: center;
+  margin: auto;
+}
+
 .dropdown {
   position: center;
 }
@@ -49,4 +54,13 @@ h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 20px;
   text-align: center;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
 }

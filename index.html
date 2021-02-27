@@ -8,29 +8,39 @@
   <script src="js/scripts.js"></script>
 </head>
 <body>
+<form id="new-order">
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">MAGGIE'S PIZZA</h1>
   </div>
 </div>
+
 <p class="text-center font-weight-light">503-555-555 | 1234 Lakeshore Ave. Oakland, CA 00000 | pizzapizza@testshop.com</p>
+
+<div class="container">
+  <p class="text-center font-weight bold">Please wear a PPE mask upon arrival with your order name prepared.<br>
+  Ca$h or Ca$hApp onlyWe appreciate tips!</p>
+
+  <div id="order">
+    <label for="name">Order Name</label>
+    <input id="name" type="text" required>
+  </div>
+
+  </div>
 
 <div class="page-header font-weight-light">
   <hr/>
-  <h2>Choose Pizza Size</h1>
+  <h2>Choose Pizza Size</h2>
     <p class="text-center font-weight-light">SM: $10 | M: $13.50 | L: $16 | XL: $18</p>
-  <hr/> 
   <div class="row">
-    <div class="col-md-12 school-options-dropdown text-center">
-      <div class="dropdown btn-group">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-          <span class="caret">Size</span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="#">M</a></li>
-          <li><a href="#">M</a></li>
-          <li><a href="#">M</a></li>
-        </ul>
+    <div class="col-md-12 text-center">
+        <select class="form-select">
+          <option>Size</option>
+          <option value="SM">SM</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
       </div>
     </div>
   </div>
@@ -39,14 +49,13 @@
   <hr/>
   <h2>Choose Toppings</h1>
   <p class="text-center font-weight-light">First topping free! | $2 per additional topping</p>
-  <hr/>
 </div>
 
 
 <div class="row">
   <div class="col-md-3">
       <div class="custom-control custom-checkbox image-checkbox">
-          <input type="checkbox" class="custom-control-input" id="pepperoni">
+          <input type="checkbox" class="custom-control-input" id="pepperoni" name="pizzaTopping" value="pepperoni">
           <p>pepperoni</p>
           <label class="custom-control-label" for="pepperoni">
               <img src="img/pepperoni.jpg" alt="#" class="img-fluid">
@@ -55,7 +64,7 @@
   </div>
   <div class="col-md-3">
       <div class="custom-control custom-checkbox image-checkbox">
-          <input type="checkbox" class="custom-control-input" id="mushroom">
+          <input type="checkbox" class="custom-control-input" id="mushroom" name="pizzaTopping" value="mushroom">
           <p>mushroom</p>
           <label class="custom-control-label" for="mushroom">
               <img src="img/mushroom.jpg" alt="#" class="img-fluid">
@@ -64,7 +73,7 @@
   </div>
   <div class="col-md-3">
       <div class="custom-control custom-checkbox image-checkbox">
-          <input type="checkbox" class="custom-control-input" id="olives">
+          <input type="checkbox" class="custom-control-input" id="olives" name="pizzaTopping" value="olives">
           <p>olives</p>
           <label class="custom-control-label" for="olives">
               <img src="img/olives.jpg" alt="#" class="img-fluid">
@@ -73,7 +82,7 @@
   </div>
   <div class="col-md-3">
       <div class="custom-control custom-checkbox image-checkbox">
-          <input type="checkbox" class="custom-control-input" id="bacon">
+          <input type="checkbox" class="custom-control-input" id="bacon" name="pizzaTopping" value="bacon">
           <p>bacon</p>
           <label class="custom-control-label" for="bacon">
               <img src="img/bacon.jpg" alt="#" class="img-fluid">
@@ -82,7 +91,7 @@
   </div>
   <div class="col-md-3">
     <div class="custom-control custom-checkbox image-checkbox">
-        <input type="checkbox" class="custom-control-input" id="sausage">
+        <input type="checkbox" class="custom-control-input" id="sausage" name="pizzaTopping" value="sausage">
         <p>sausage</p>
         <label class="custom-control-label" for="sausage">
             <img src="img/sausage.jpg" alt="#" class="img-fluid">
@@ -91,7 +100,7 @@
 </div>
 <div class="col-md-3">
     <div class="custom-control custom-checkbox image-checkbox">
-        <input type="checkbox" class="custom-control-input" id="kale">
+        <input type="checkbox" class="custom-control-input" id="kale" name="pizzaTopping" value="kale">
         <p>kale</p>
         <label class="custom-control-label" for="kale">
             <img src="img/kale.png" alt="#" class="img-fluid">
@@ -100,7 +109,7 @@
 </div>
 <div class="col-md-3">
     <div class="custom-control custom-checkbox image-checkbox">
-        <input type="checkbox" class="custom-control-input" id="pineapple">
+        <input type="checkbox" class="custom-control-input" id="pineapple" name="pizzaTopping" value="pineapple">
         <p>pineapple</p>
         <label class="custom-control-label" for="pineapple">
             <img src="img/pineapple.jpg" alt="#" class="img-fluid">
@@ -109,7 +118,7 @@
 </div>
 <div class="col-md-3">
     <div class="custom-control custom-checkbox image-checkbox">
-        <input type="checkbox" class="custom-control-input" id="onion">
+        <input type="checkbox" class="custom-control-input" id="onion" name="pizzaTopping" value="onion">
         <p>red onion</p>
         <label class="custom-control-label" for="onion">
             <img src="img/onion.jpg" alt="#" class="img-fluid">
@@ -120,13 +129,16 @@
 
 <div class="page-header font-weight-light">
   <hr/>
-  <h2>Extras</h1>
-  <p class="text-center font-weight-light">Treat yoself.</p>
-  <hr/>
+  <h2>Order</h2>
+    <div class="wrapper">
+      <button class="btn btn-primary" type="submit">Pick-up</button>
+      <button class="btn btn-primary" type="submit">Delivery</button>
+      <button class="btn btn-primary" type="submit">Anotha One</button>
+  </div>
 </div>
 
+ 
 
-
-
+</form>
 </body>
 </html>
