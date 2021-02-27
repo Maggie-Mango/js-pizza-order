@@ -1,6 +1,6 @@
-# Title
+# Maggie's Pizza Place
 
-### Snappy one-linder
+### Pizza ordering website which utilizes a JS constructor
 
 #### By Maggie Saldivia **{Maggie-Mango}**
 
@@ -14,22 +14,22 @@
 
 ## Description
 
-text
+Customer can order pizza from their local shop. If they want to customize a pizza, they just have to press the "Anotha One" button. The total cost should be returned whether they choose pick-up or delivery.
 
 ## Setup/Installation Requirements
 
 * Clone this repository to your desktop.
 * Navigate to the top level of the directory.
-* Open {folder-name}/index.html in your browser.
+* Open pizza-order/index.html in your browser.
 
 ## Link
 
-https://maggie-mango.github.io/{repo-name}
+https://maggie-mango.github.io/js-pizza-order
 
 ## Known Bugs
-
-* 
-* 
+* Error is not thrown if button is pressed without customizing a pizza
+* Customer object not utilized in html
+* Address input does not account for empty inputs
 
 ## License
 
